@@ -53,12 +53,15 @@
                 >
                   <i class="fas fa-eye fa-2x fs-5 text-success bg-dark p-1"></i>
                 </RouterLink>
-                <RouterLink :to="`/customers/${customer.id}`" class="nav-link">
+                <RouterLink class="nav-link">
                   <i
                     class="fas fa-trash fa-2x fs-5 text-danger bg-dark p-1"
                   ></i>
                 </RouterLink>
-                <RouterLink :to="`/customers/view/${customer.id}`" class="nav-link">
+                <RouterLink
+                  :to="`/customers/view/${customer.id}`"
+                  class="nav-link"
+                >
                   <i
                     class="fas fa-edit fa-2x fs-5 text-primary bg-dark p-1"
                   ></i>
@@ -207,6 +210,17 @@ export default {
         console.log(error);
       }
     },
+    // deleteAction: async function (id) {
+    //   try {
+    //     this.loading = true;
+    //     const res = await Customers.deleteCustomer(id);
+    //     this.customer = res.data;
+    //     this.loading = false;
+    //   } catch (error) {
+    //     this.error = error.message;
+    //     loading = false;
+    //   }
+    // },
   },
   components: { Spinner },
 };

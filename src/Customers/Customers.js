@@ -27,9 +27,9 @@ class Customers {
       .catch((err) => console.log(err));
     return res;
   }
-  static updateCustomer(customer) {
+  static updateCustomer(id, customer) {
     const res = axios
-      .put(`${this.serverUrl}/customers/${customer.id}`, customer)
+      .put(`${this.serverUrl}/customers/${id}`, customer)
       .then((res) => res)
       .catch((err) => console.log(err));
     return res;

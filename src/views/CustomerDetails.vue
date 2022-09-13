@@ -52,7 +52,7 @@
               <div class="col-md-6">
                 <div class="card">
                   <div class="card-body">
-                    <form @submit.prevent="createpost()">
+                    <form @submit.prevent="update()">
                       <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input
@@ -162,6 +162,17 @@ export default {
     isDone: function () {
       return Object.keys(this.customer).length > 0;
     },
+    update: async function () {
+      try {
+        this.loading = true;
+        const res = await Customers.updateCustomer(this.id, this.customer);
+        this.customer = res.data;
+        this.loading = false;
+      } catch (error) {
+        this.error = error.message;
+        loading = false;
+      }
+    }
   },
 };
 </script>
