@@ -193,52 +193,17 @@
       }
     },
     {
-      "id": 9,
-      "name": "Glenna Reichert",
-      "username": "Delphine",
-      "email": "Chaim_McDermott@dana.io",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqsN92IOHsDoAfZiq5xSPLAaHitk4pc4BKQoTwqytbjT_jwNqoOcWgFtFofyWGMUJpzbw&usqp=CAU",
+      "name": "Ebony Beasley",
+      "image": "Risa Weber",
       "address": {
-        "street": "Dayna Park",
-        "suite": "Suite 449",
-        "city": "Bartholomebury",
-        "zipcode": "76495-3109",
-        "geo": {
-          "lat": "24.6463",
-          "lng": "-168.8889"
-        }
+        "street": "Ut voluptas nemo qui",
+        "city": "Quas tempora possimu",
+        "state": "Sit aut vel similiqu"
       },
-      "phone": "(775)976-6794 x41206",
-      "website": "conrad.com",
-      "company": {
-        "name": "Yost and Sons",
-        "catchPhrase": "Switchable contextually-based project",
-        "bs": "aggregate real-time technologies"
-      }
-    },
-    {
-      "id": 10,
-      "name": "Clementina DuBuque",
-      "username": "Moriah.Stanton",
-      "email": "Rey.Padberg@karina.biz",
-      "image": "https://static.vecteezy.com/system/resources/previews/000/439/863/non_2x/vector-users-icon.jpg",
-      "address": {
-        "street": "Kattie Turnpike",
-        "suite": "Suite 198",
-        "city": "Lebsackbury",
-        "zipcode": "31428-2261",
-        "geo": {
-          "lat": "-38.2386",
-          "lng": "57.2232"
-        }
-      },
-      "phone": "024-648-3804",
-      "website": "ambrose.net",
-      "company": {
-        "name": "Hoeger LLC",
-        "catchPhrase": "Centralized empowering task-force",
-        "bs": "target end-to-end models"
-      }
+      "email": "bavogebip@mailinator.com",
+      "phone": "+1 (862) 442-9466",
+      "state": "",
+      "id": 9
     }
   ],
   "posts": [

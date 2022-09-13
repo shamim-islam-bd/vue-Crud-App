@@ -12,7 +12,7 @@ class Customers {
     return res;
   }
 
-  static getCustomer(id) {
+  static getCustomerDetails(id) {
     const res = axios
       .get(`${this.serverUrl}/customers/${id}`)
       .then((res) => res)

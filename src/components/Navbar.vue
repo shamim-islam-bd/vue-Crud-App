@@ -25,7 +25,7 @@
               <RouterLink to="/employee" class="nav-link">Employee</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink to="/customer" class="nav-link">Customer</RouterLink>
+              <RouterLink to="/customers" class="nav-link">Customer</RouterLink>
             </li>
             <li class="nav-item">
               <RouterLink to="/dashboard" class="nav-link"
