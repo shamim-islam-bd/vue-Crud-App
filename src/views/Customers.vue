@@ -16,56 +16,55 @@
       </div>
     </div>
 
-    <div class="row mt-3 m-auto">
+    <div class="row mt-3 m-auto" :v-if="customers.length > 0">
       <div class="col-md-8">
         <h1 class="text-success">Customers Info</h1>
-        <!-- bootstrap card with image and user info  -->
-        <div class="card mb-3" v-if="customers.length > 0">
-          <div
-            class="row g-0 m-2"
-            v-for="customer of customers"
-            :key="customer"
-          >
-            <div class="col-md-4 my-3">
-              <img :src="customer.image" alt="..." class="img-fluid" />
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Name: {{ customer.name }}</h5>
-                <span class="card-text">
-                  address: {{ customer.address.street }} </span
-                ><br />
-                <span class="card-text">
-                  city: {{ customer.address.city }} </span
-                ><br />
-                <span class="card-text"> state: web developer </span><br />
-                <span class="card-text"> Email: {{ customer.email }} </span>
-                <br />
-                <span class=""> phone: {{ customer.phone }} </span>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
+
+        <div class="card mb-3">
+          <div>
+            <h1>length: {{ customers.length }}</h1>
+            <div class="row g-0 m-2" v-for="customer in customers">
+              <div class="col-md-4 my-3">
+                <img :src="customer.image" alt="..." class="img-fluid" />
               </div>
-              <div class="d-flex flex-row gap-3 px-3">
-                <RouterLink
-                  :to="`/customers/view/${customer.id}`"
-                  class="nav-link"
-                >
-                  <i class="fas fa-eye fa-2x fs-5 text-success bg-dark p-1"></i>
-                </RouterLink>
-                <RouterLink class="nav-link">
-                  <i
-                    class="fas fa-trash fa-2x fs-5 text-danger bg-dark p-1"
-                  ></i>
-                </RouterLink>
-                <RouterLink
-                  :to="`/customers/view/${customer.id}`"
-                  class="nav-link"
-                >
-                  <i
-                    class="fas fa-edit fa-2x fs-5 text-primary bg-dark p-1"
-                  ></i>
-                </RouterLink>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Name: {{ customer.name }}</h5>
+                  <span class="card-text">
+                    address: {{ customer.address.street }} </span
+                  ><br />
+                  <span class="card-text">
+                    city: {{ customer.address.city }} </span
+                  ><br />
+                  <span class="card-text"> state: web developer </span><br />
+                  <span class="card-text"> Email: {{ customer.email }} </span>
+                  <br />
+                  <span class=""> phone: {{ customer.phone }} </span>
+                  <p class="card-text">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </p>
+                </div>
+                <div class="d-flex flex-row gap-3 px-3">
+                  <RouterLink
+                    :to="`/customers/view/${customer.id}`"
+                    class="nav-link"
+                  >
+                    <button class="btn btn-primary">Details</button>
+                  </RouterLink>
+                  <button
+                    class="btn btn-danger"
+                    @click="deleteAction(customer.id)"
+                  >
+                    Delete
+                  </button>
+
+                  <RouterLink
+                    :to="`/customers/view/${customer.id}`"
+                    class="nav-link"
+                  >
+                    <button class="btn btn-success">Update</button>
+                  </RouterLink>
+                </div>
               </div>
             </div>
           </div>
@@ -210,17 +209,21 @@ export default {
         console.log(error);
       }
     },
-    // deleteAction: async function (id) {
-    //   try {
-    //     this.loading = true;
-    //     const res = await Customers.deleteCustomer(id);
-    //     this.customer = res.data;
-    //     this.loading = false;
-    //   } catch (error) {
-    //     this.error = error.message;
-    //     loading = false;
-    //   }
-    // },
+    deleteAction: async function (id) {
+      try {
+        this.loading = true;
+        const res = await Customers.deleteCustomer(id);
+        this.customer = res.data;
+        this.loading = false;
+        const response = await Customers.getAllCustomers();
+        this.customers = response.data;
+        // console.log(res.data);
+        this.loading = false;
+      } catch (error) {
+        this.error = error.message;
+        loading = false;
+      }
+    },
   },
   components: { Spinner },
 };
