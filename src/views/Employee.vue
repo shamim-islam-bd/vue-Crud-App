@@ -1,6 +1,6 @@
 <template lang="">
   <div class="container mt-4">
-    <h1>Employe</h1>
+    <h1>Employe > </h1>
     <!-- make a table -->
     <table class="table table-striped table-hover">
       <thead>
