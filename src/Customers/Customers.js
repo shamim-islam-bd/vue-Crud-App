@@ -24,7 +24,10 @@ class Customers {
     const res = axios
       .post(`${this.serverUrl}/customers`, customer)
       .then((res) => res)
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err.message);
+      }
+      );
     return res;
   }
   static updateCustomer(id, customer) {

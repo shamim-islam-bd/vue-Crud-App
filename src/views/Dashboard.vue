@@ -1,6 +1,6 @@
 <template lang="">
   <div class="container mt-5">
-    <h1>Dashboard > </h1>
+    <h1>Dashboard ></h1>
     <p>under development</p>
   </div>
 </template>
@@ -10,3 +10,4 @@ export default {
 };
 </script>
 <style lang=""></style>
+ 
